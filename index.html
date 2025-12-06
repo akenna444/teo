@@ -3,80 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>De Zipa a Medellín 💗✈️</title>
+    <title>Para Mateo</title>
 
     <style>
         body {
-            background: #fde6ef;
-            font-family: "Poppins", sans-serif;
-            margin: 0;
-            overflow: hidden;
+            background: #fff;
+            font-family: "Comic Sans MS", cursive;
+            text-align: center;
+            padding: 20px;
         }
 
-        .contenedor {
-            width: 100vw;
-            height: 100vh;
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .mapa {
             position: relative;
+            width: 90%;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
-        .city {
-            width: 170px;
+        img {
             position: absolute;
         }
 
-        #zipa {
-            left: 10%;
-            bottom: 15%;
+        #bogota {
+            width: 150px;
+            left: 10px;
+            top: 150px;
         }
 
-        #mede {
-            right: 10%;
-            top: 15%;
+        #medellin {
+            width: 130px;
+            right: 10px;
+            top: 140px;
         }
 
-        .avion {
-            width: 70px;
-            position: absolute;
-            animation: volar 6s infinite ease-in-out;
+        #plane {
+            width: 90px;
+            top: 40px;
+            left: 45%;
+            animation: volar 4s ease-in-out forwards;
         }
 
         @keyframes volar {
-            0% { left: 10%; bottom: 15%; }
-            50% { left: 45%; top: 10%; }
-            100% { left: 80%; top: 15%; }
+            0% { transform: translate(0,0); }
+            30% { transform: translate(-40px, 80px); }
+            60% { transform: translate(40px, 160px); }
+            85% { transform: translate(-20px, 200px); }
+            100% { transform: translate(90px, 240px); }
         }
 
-        .frase {
-            position: absolute;
-            bottom: 30px;
-            width: 100%;
-            text-align: center;
-            font-size: 22px;
-            font-weight: 600;
-            color: #b43d72;
+        #mensajeFinal {
+            opacity: 0;
+            font-size: 20px;
+            margin-top: 330px;
+            transition: opacity 1s ease;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="contenedor">
+    <h1>Para Mateo 💙</h1>
+    <p>Always together, never apart...</p>
 
-        <!-- Zipaquirá -->
-        <img id="zipa" class="city" src="https://upload.wikimedia.org/wikipedia/commons/5/55/Colombia_-_Cundinamarca.svg">
+    <div class="mapa">
+        <!-- Bogotá -->
+        <img id="bogota" src="https://raw.githubusercontent.com/akenna444/teo/main/bogota.png">
 
         <!-- Medellín -->
-        <img id="mede" class="city" src="https://upload.wikimedia.org/wikipedia/commons/4/43/Antioquia_in_Colombia_%28departments%29.svg">
+        <img id="medellin" src="https://raw.githubusercontent.com/akenna444/teo/main/medellin.png">
 
         <!-- Avioncito -->
-        <img class="avion" src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Paper_plane_icon.svg">
-
-        <!-- Frase final -->
-        <div class="frase">
-            Desde Zipaquirá hasta Medellín… siempre voy hacia ti 💗✈️
-        </div>
-
+        <img id="plane" src="https://raw.githubusercontent.com/akenna444/teo/main/plane.png">
     </div>
+
+    <p id="mensajeFinal">Maybe in distance but never in ❤️</p>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById("mensajeFinal").style.opacity = 1;
+        }, 4000);
+    </script>
 
 </body>
 </html>
