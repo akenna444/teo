@@ -1,93 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Para Mateo</title>
 
     <style>
         body {
-            background: #fff;
-            font-family: "Comic Sans MS", cursive;
-            text-align: center;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            width: 360px;
+            background: white;
+            border-radius: 20px;
             padding: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            text-align: center;
         }
 
-        h1 {
-            font-size: 28px;
+        .card h1 {
             margin-bottom: 10px;
+            font-size: 26px;
         }
 
-        .mapa {
-            position: relative;
-            width: 90%;
-            max-width: 500px;
-            margin: 0 auto;
+        .city-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 12px;
         }
 
-        img {
-            position: absolute;
+        .arrow {
+            font-size: 30px;
+            margin: 10px 0;
         }
 
-        #bogota {
-            width: 150px;
-            left: 10px;
-            top: 150px;
-        }
-
-        #medellin {
-            width: 130px;
-            right: 10px;
-            top: 140px;
-        }
-
-        #plane {
-            width: 90px;
-            top: 40px;
-            left: 45%;
-            animation: volar 4s ease-in-out forwards;
-        }
-
-        @keyframes volar {
-            0% { transform: translate(0,0); }
-            30% { transform: translate(-40px, 80px); }
-            60% { transform: translate(40px, 160px); }
-            85% { transform: translate(-20px, 200px); }
-            100% { transform: translate(90px, 240px); }
-        }
-
-        #mensajeFinal {
-            opacity: 0;
-            font-size: 20px;
-            margin-top: 330px;
-            transition: opacity 1s ease;
+        .footer {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #444;
         }
     </style>
 </head>
 
 <body>
+    <div class="card">
+        <h1>Para Mateo</h1>
 
-    <h1>Para Mateo 💙</h1>
-    <p>Always together, never apart...</p>
+        <!-- Imagen Bogotá (placeholder visible) -->
+        <img class="city-image" 
+             src="https://picsum.photos/800/500?random=1" 
+             alt="Bogotá">
 
-    <div class="mapa">
-        <!-- Bogotá -->
-        <img id="bogota" src="https://raw.githubusercontent.com/akenna444/teo/main/bogota.png">
+        <div class="arrow">⬇️</div>
 
-        <!-- Medellín -->
-        <img id="medellin" src="https://raw.githubusercontent.com/akenna444/teo/main/medellin.png">
+        <!-- Imagen Medellín (placeholder visible) -->
+        <img class="city-image" 
+             src="https://picsum.photos/800/500?random=2" 
+             alt="Medellín">
 
-        <!-- Avioncito -->
-        <img id="plane" src="https://raw.githubusercontent.com/akenna444/teo/main/plane.png">
+        <div class="footer">Bogotá ➜ Medellín</div>
     </div>
-
-    <p id="mensajeFinal">Maybe in distance but never in ❤️</p>
-
-    <script>
-        setTimeout(() => {
-            document.getElementById("mensajeFinal").style.opacity = 1;
-        }, 4000);
-    </script>
-
 </body>
 </html>
