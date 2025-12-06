@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Mateo 💖</title>
+
+<style>
+    body {
+        margin: 0;
+        background: linear-gradient(135deg, #ffd6e8, #d5e8ff);
+        font-family: 'Poppins', sans-serif;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .card {
+        background: white;
+        width: 380px;
+        padding: 25px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 0 25px rgba(0,0,0,0.15);
+        position: relative;
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .mapa {
+        position: relative;
+        margin-top: 20px;
+        height: 160px;
+    }
+
+    .city {
+        width: 120px;
+        position: absolute;
+        top: 20px;
+    }
+
+    #zipa {
+        left: -10px;
+    }
+
+    #mede {
+        right: -10px;
+    }
+
+    /* Línea roja que se dibuja */
+    .linea {
+        width: 180px;
+        stroke: red;
+        stroke-width: 3;
+        fill: none;
+        position: absolute;
+        top: 90px;
+        left: 95px;
+        stroke-dasharray: 300;
+        stroke-dashoffset: 300;
+        animation: dibujar 4s ease forwards;
+    }
+
+    @keyframes dibujar {
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    /* Avioncito volando */
+    .avion {
+        width: 50px;
+        position: absolute;
+        top: 50px;
+        left: 20px;
+        animation: volar 4s ease forwards;
+    }
+
+    @keyframes volar {
+        0% { transform: translate(0, 0); }
+        25% { transform: translate(60px, -20px); }
+        50% { transform: translate(120px, 10px); }
+        75% { transform: translate(160px, -10px); }
+        100% { transform: translate(210px, 0); }
+    }
+
+    /* Mensaje final que aparece suavecito */
+    #mensajeFinal {
+        margin-top: 20px;
+        font-size: 16px;
+        opacity: 0;
+        transition: opacity 1.5s ease;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h3>Always together, Never apart…</h3>
+
+    <div class="mapa">
+        <!-- Avión animado -->
+        <img class="avion" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Paper_plane_icon.svg/1024px-Paper_plane_icon.svg.png">
+
+        <!-- Mapa Zipaquirá -->
+        <img id="zipa" class="city" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Cundinamarca_in_Colombia_%28location_map_scheme%29.svg/800px-Cundinamarca_in_Colombia_%28location_map_scheme%29.svg.png">
+
+        <!-- Mapa Medellín -->
+        <img id="mede" class="city" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Antioquia_in_Colombia_%28departments%29.svg/640px-Antioquia_in_Colombia_%28departments%29.svg.png">
+
+        <!-- Línea animada -->
+        <svg class="linea" width="200" height="60">
+            <path d="M10 30 C 60 0, 120 60, 180 30"></path>
+        </svg>
+    </div>
+
+    <p id="mensajeFinal">Maybe in distance but never in ❤️</p>
+</div>
+
+<script>
+    // Mostrar mensaje cuando termina la animación
+    setTimeout(() => {
+        document.getElementById("mensajeFinal").style.opacity = 1;
+    }, 4000);
+</script>
+
+</body>
+</html>
